@@ -3,7 +3,6 @@ Flask==3.0.0
 Flask-Cors==4.0.0
 huggingface-hub==0.19.4
 librosa==0.10.1
-llvmlite==0.39.1
 lxml==4.9.2
 nltk==3.8.1
 numba==0.56.4
