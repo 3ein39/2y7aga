@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Analysis Tool</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Audio Analysis Tool</h1>
+        
+        <div class="controls">
+            <button id="startRecordButton" class="btn">Start Recording</button>
+            <button id="stopRecordButton" class="btn" disabled>Stop Recording</button>
+            <label for="fileInput" class="btn">Choose File</label>
+            <input type="file" id="fileInput" accept="audio/*" hidden>
+            <button id="sendButton" class="btn" disabled>Analyze Audio</button>
+        </div>
+
+        <div id="audioPlaybackContainer" class="audio-playback" style="display:none;">
+            <audio id="audioPlayback" controls></audio>
+        </div>
+
+        <div id="loadingIndicator" class="loading-indicator" style="display:none;">
+            <div class="loader"></div>
+        </div>
+
+        <div id="progressBar" class="progress-bar" style="display:none;">
+            <div id="progressBarFill" class="progress-bar-fill"></div>
+        </div>
+
+            <!-- ... existing HTML ... -->
+
+        <div id="resultContainer" class="results" style="display:none;">
+            <div class="result-box" id="accuracyResult">
+                <h3>Accuracy of Pronunciation</h3>
+                <p id="accuracyMessage"></p>
+                <p id="accuracyScore"></p>
+                <div class="confidence-section">
+                    <span class="confidence-label">Model Confidence:</span>
+                    <div class="confidence-bar" id="accuracyConfidenceBar">
+                        <div class="confidence-fill" id="accuracyConfidenceFill"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="result-box" id="fluencyResult">
+                <h3>Fluency of Speech</h3>
+                <p id="fluencyMessage"></p>
+                <p id="fluencyScore"></p>
+                <div class="confidence-section">
+                    <span class="confidence-label">Model Confidence:</span>
+                    <div class="confidence-bar" id="fluencyConfidenceBar">
+                        <div class="confidence-fill" id="fluencyConfidenceFill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ... rest of your HTML ... -->
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
